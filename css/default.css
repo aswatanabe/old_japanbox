@@ -1,0 +1,494 @@
+@charset "UTF-8";
+
+/* ====================================================
+** GENERAL STYLES
+==================================================== */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1em;
+}
+
+:root {
+    --base-w: 320px;
+    --logic-px: calc(var(--base-w) / 320);
+    --color-link: #3490b7;
+    --color-hover: #2285b1;
+    --color-button-border: #a0c4d3;
+    --color-button-background: #ccc;
+    --color-button-hover: #a0c4d3;
+    --color-background: #808080;
+
+    font-family: "Noto Serif", serif;
+    font-size: max(calc(var(--logic-px) * 16), 12px);
+    scroll-behavior: smooth;
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    font-size: 1.4em;
+    line-height: 1.8em;
+}
+
+h3 {
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 1em;
+    line-height: 1.3em;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:is(:hover, :focus) {
+    color: var(--color-hover);
+    text-decoration: underline;
+}
+
+/* ====================================================
+** UTILITIES
+==================================================== */
+
+/* button
+==================================================== */
+
+.btn a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+    margin-block-start: 3em;
+    color: var(--color-link);
+    border: 2px solid var(--color-button-border);
+    border-radius: 10px;
+    inline-size: 300px;
+    block-size: 50px;
+}
+
+.btn a::after {
+    inline-size: 5px;
+    block-size: 5px;
+    content: "";
+    border-top: 3px solid var(--color-link);
+    border-right: 3px solid var(--color-link);
+    transform: rotate(45deg);
+}
+
+.btn a:is(:hover, :focus) {
+    color: #333;
+    text-decoration: none;
+    background-color: var(--color-button-hover);
+    border: 1px solid var(--color-link);
+}
+
+.btn a:is(:hover, :focus)::after {
+    border-top: 3px solid #333;
+    border-right: 3px solid #333;
+}
+
+/* rating
+==================================================== */
+.stars::before {
+    --percent: calc(var(--rating) / 5 * 100%);
+    --star-size: 20px;
+    --star-color: #fff;
+    --star-background: #fc0;
+
+    display: inline-block;
+    font-family: Times;
+    font-size: var(--star-size);
+    line-height: 1;
+    letter-spacing: 3px;
+    content: "★★★★★";
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ====================================================
+** SITEWIDE
+==================================================== */
+
+header, main, footer, section, article, div, nav {
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
+}
+
+/* header
+==================================================== */
+
+header {
+    position: fixed;
+    z-index: 2000;
+    background-color: rgb(255 255 255 / 80%);
+    block-size: 6em;
+}
+
+/* ------------------ information ------------------ */
+header > p {
+    grid-area: header;
+    line-height: 2em;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+    block-size: 2em;
+    inline-size: 100vw;
+}
+
+/* ------------------ navigation ------------------ */
+header > nav {
+    grid-area: header;
+    block-size: 4em;
+}
+
+header > nav > h2 {
+    display: none;
+}
+
+header > nav > p {
+    margin-inline-start: 0.5em;
+}
+
+header > nav > div > div > ul {
+    align-items: center;
+}
+
+header > nav > div > div > ul > li > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+}
+
+header > nav > div > div > ul > li > a:is(:hover, :focus) {
+    color: var(--color-link);
+}
+
+header > nav > div > div > ul > li > a > i {
+    padding-inline-end: 1em;
+}
+
+/* ------------------ hanburger menu ------------------ */
+#burger {
+    position: fixed;
+    inset-block-start: 2.5em;
+    inset-inline-end: 0.5em;
+    z-index: 1000;
+}
+
+#burger-btn {
+    z-index: 999;
+    cursor: pointer;
+    background-color: #000;
+    border-radius: 10%;
+    inline-size: 3em;
+    block-size: 3em;
+}
+
+#burger-btn > span {
+    position: absolute;
+    inset-inline-start: 20%;
+    display: block;
+    inline-size: 60%;
+    block-size: 1px;
+    background-color: #fff;
+    transition:
+        transform 0.6s ease-in-out,
+        top 0.5s ease,
+        bottom 0.5s ease;
+}
+
+#burger-btn > span:nth-child(1) {
+    inset-block-start: 20%;
+}
+
+#burger-btn > span:nth-child(2) {
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+}
+
+#burger-btn > span:nth-child(3) {
+    inset-block-end: 20%;
+}
+
+#burger-menu {
+    position: fixed;
+    z-index: 900;
+    display: grid; /* for "align-items center" */
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    background: #000;
+    transition: transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateX(-100%);
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 50%;
+    block-size: 100%;
+}
+
+#burger-menu ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#burger-menu a {
+    display: block;
+    padding: 30px 0;
+    color: #fff;
+    transition: opacity 0.6s ease;
+}
+
+#burger-menu a:is(:hover, :focus) {
+    opacity: 0.6;
+}
+
+.is-open #burger-btn > span:nth-child(1) {
+    inset-block-start: 50%;
+    transform: rotate(45deg) translateY(-50%);
+}
+
+.is-open #burger-btn > span:nth-child(2) {
+    inline-size: 0;
+}
+
+.is-open #burger-btn > span:nth-child(3) {
+    inset-block-start: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+}
+
+.is-open #burger-menu {
+    z-index: 999;
+    transform: translateX(0);
+}
+
+.burger-blur {
+    filter: blur(8px);
+}
+
+/* main
+==================================================== */
+
+main {
+    grid-area: main;
+    margin-block-start: 6em; /* info 2em + nav 4em */
+}
+
+/* footer
+==================================================== */
+
+footer {
+    grid-area: footer;
+    padding-block: 1em;
+    padding-inline: 0.5em;
+    margin-block-start: 3em;
+    color: #fff;
+    background-color: var(--color-background);
+}
+
+footer > section > h2 {
+    font-size: 1em;
+}
+
+footer > section > ul {
+    font-size: 0.9em;
+}
+
+/* ------------------ sodial media ------------------ */
+footer section:nth-of-type(1) > ul {
+    display: flex;
+    margin-block-start: 0.5em;
+}
+
+footer section:nth-of-type(1) > ul > li {
+    text-align: center;
+}
+
+footer section:nth-of-type(1) > ul > li > a {
+    display: grid;
+    place-content: center;
+    padding: 1em;
+    color: #fff;
+    background-color: #000;
+    border-radius: 50%;
+    inline-size: 3em;
+    block-size: 3em;
+}
+
+footer section:nth-of-type(1) > ul > li > a:hover {
+    text-decoration: none;
+}
+
+footer section:nth-of-type(1) > ul > li > a > i {
+    font-size: 1.2em;
+}
+
+footer section:nth-of-type(1) > ul > li:nth-of-type(1) {
+    margin-inline-start: 1em;
+}
+
+footer section:nth-of-type(1) > ul > li:not(:nth-of-type(1)) {
+    margin-inline-start: 2em;
+}
+
+/* ------------------ links ------------------ */
+footer > section {
+    border-bottom: 1px solid #fff;
+}
+
+footer > section > h2 {
+    padding-block: 0.5em;
+}
+
+footer > section:not(:nth-of-type(1)) {
+    padding-block: 0;
+}
+
+footer > section:not(:nth-of-type(1)) > h2.toggle::after {
+    position: absolute;
+    content: "+";
+    inset-inline-end: 1em;
+}
+
+footer > section:not(:nth-of-type(1)) > h2.toggle.active::after {
+    content: "-";
+}
+
+footer > section:not(:nth-of-type(1)) > ul {
+    display: none;
+}
+
+footer > section:not(:nth-of-type(1)) > ul > li {
+    padding-block: 0.5em;
+}
+
+footer > section:not(:nth-of-type(1)) > ul > li > a {
+    color: #fff;
+}
+
+footer > section:not(:nth-of-type(1)) > ul > li:nth-of-type(1) {
+    border-top: 1px solid #fff;
+}
+
+/* ------------------ copyright ------------------ */
+footer > small {
+    display: block;
+    margin-block-start: 1em;
+    text-align: center;
+}
+
+/* ====================================================
+** MEDIA QUERY - Tablet
+==================================================== */
+@media screen and (min-width: 600px) {
+}
+
+/* ====================================================
+** MEDIA QUERY - PC
+==================================================== */
+@media screen and (min-width: 1025px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            ". main ."
+            "footer footer footer";
+        grid-template-columns: 1fr clamp(1025px, 80%, 1720px) 1fr;
+    }
+
+    header > nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    header > nav > div > div:nth-of-type(2) > ul {
+        display: flex;
+    }
+
+    header > nav > div > div:nth-of-type(2) > ul > li {
+        padding-inline-start: 2em;
+    }
+
+    header > nav > div > div:nth-of-type(2) > ul > li:nth-of-type(1) {
+        display: none;
+    }
+
+    header > nav > div > div > ul > li > a > i {
+        padding-inline-end: unset;
+    }
+
+    footer {
+        display: grid;
+        grid-template-areas:
+            "social footer1 footer2 footer3"
+            "copyright copyright copyright copyright";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    footer section:nth-of-type(1) {
+        display: grid;
+        grid-area: social;
+        justify-content: center;
+    }
+
+    footer section:nth-of-type(1) > h2 {
+        text-align: center;
+    }
+
+    footer section:nth-of-type(1) > ul {
+        display: flex;
+        margin-block-start: 1em;
+    }
+
+    footer section:nth-of-type(1) > ul > li:nth-of-type(1) {
+        margin-inline-start: 0;
+    }
+
+    footer section:nth-of-type(1) > ul > li:not(:nth-of-type(1)) {
+        margin-inline-start: 0.5em;
+    }
+
+    footer > section:not(:nth-of-type(1)) > h2 {
+        margin-block-end: 1em;
+    }
+
+    footer > section:not(:nth-of-type(1)) > ul {
+        display: block;
+    }
+
+    footer > section:not(:nth-of-type(1)) > ul > li:nth-of-type(1) {
+        border-top: none;
+    }
+
+    footer > small {
+        grid-area: copyright;
+    }
+}

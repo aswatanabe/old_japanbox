@@ -1,0 +1,561 @@
+@charset "UTF-8";
+
+/* hero
+==================================================== */
+.top main > section:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    overflow: visible;
+    text-align: center;
+    background-image: url("../images/hero-pc.webp");
+    background-repeat: no-repeat;
+    block-size: 70vh;
+}
+
+.top main > section:nth-of-type(1) > h2 {
+    font-size: 2.4em;
+}
+
+.top main > section:nth-of-type(1) > .btn a {
+    background-color: #fff;
+}
+
+.top main > section:nth-of-type(1) > .btn a:is(:hover, :focus) {
+    background-color: var(--color-button-hover);
+}
+
+.top main > section:nth-of-type(1) > p:nth-of-type(3) {
+    display: none;
+}
+
+/* ====================================================
+** SITEWIDE
+==================================================== */
+.top main > section:nth-of-type(2) > article:not(:nth-of-type(8)) {
+    margin-block-end: 5em;
+}
+
+.top main > section:nth-of-type(2) > article:not(:nth-of-type(5)) {
+    padding-inline: 1em;
+}
+
+.top main > section:nth-of-type(2) > article > h2 {
+    margin-block-end: 2em;
+    text-align: center;
+}
+
+/* HOW IT WORKS
+==================================================== */
+.top main > section:nth-of-type(2) > article:nth-of-type(1) > h2 {
+    margin-block-start: 1em;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(1) > section {
+    display: grid;
+    grid-template-areas:
+        "a b"
+        "a c";
+    grid-template-columns: 33% auto;
+    column-gap: 2em;
+    align-items: center;
+    padding-block: 1em;
+    border-bottom: 1px solid #000;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(1) > section img {
+    grid-area: a;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    inline-size: 100%;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(1) > section h3 {
+    grid-area: b;
+    margin-block-end: 1em;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(1) > section p {
+    grid-area: c;
+}
+
+/* WHAT'S INSIDE THE BOX
+==================================================== */
+.top main > section:nth-of-type(2) > article:nth-of-type(2) {
+    text-align: center;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(2) > section {
+    margin-block-end: 1em;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(2) > section h3,p,ul {
+    margin-block-end: 1em;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(2) > section img {
+    inline-size: min(100%, 450px);
+}
+
+/* FEATURED BY
+==================================================== */
+
+/* ------------------ slick ------------------ */
+.autoplay img {
+    object-fit: contain;
+    inline-size: 100%;
+    block-size: 100%;
+}
+
+/* ------------------ slick-theme ------------------ */
+.autoplay .slick-prev,.autoplay .slick-next {
+    z-index: 100;
+}
+
+.autoplay .slick-prev::before,.autoplay .slick-next::before {
+    color: #000;
+}
+
+.autoplay .slick-prev {
+    left: 0;
+}
+
+.autoplay .slick-next {
+    right: 0;
+}
+
+/* WHAT COSTOMER SAY
+==================================================== */
+.top main > section:nth-of-type(2) > article:nth-of-type(4) > section {
+    padding-block: 1em;
+    padding-inline: 2em;
+    margin-block: 1em;
+    border: 1px solid #000;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(4) > section > h3 {
+    display: none;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(4) > section > p {
+    font-size: 0.8em;
+    line-height: 1.4em;
+}
+
+/* ORDER YOUR BOX NOW
+==================================================== */
+.top main > section:nth-of-type(2) > article:nth-of-type(5) {
+    padding-block: 2em;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(5) > p > a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(5) > p > a:is(:hover, :focus) {
+    color: var(--color-hover);
+}
+
+/* INSPIRATION
+==================================================== */
+.top main > section:nth-of-type(2) > article:nth-of-type(6) {
+    text-align: center;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(6) > section {
+    display: grid;
+    grid-template-areas: ba;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(6) > section > img {
+    grid-area: ba;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(1px);
+    inline-size: 100%;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(6) > section > div {
+    display: grid;
+    grid-area: ba;
+    align-items: center;
+    padding: 1.3em;
+    text-align: start;
+    background-color: rgb(255 255 255 / 60%);
+    border: 1px solid #fff;
+    inset-block-start: 4%;
+    inset-inline-start: 4%;
+    inline-size: 92%;
+    block-size: 92%;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(6) > section > p {
+    margin: auto;
+}
+
+/* JOIN OUR INSTAGRAM
+==================================================== */
+.top main > section:nth-of-type(2) > article:nth-of-type(7) {
+    text-align: center;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(7) > p:nth-of-type(1) {
+    display: grid;
+    grid-template-areas:
+        "ca cb"
+        "cc cd";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(7) > p:nth-of-type(1) > a {
+    aspect-ratio: 1/1;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(7) > p:nth-of-type(1) > a > img {
+    object-fit: cover;
+    inline-size: 100%;
+    block-size: 100%;
+    background-color: #000; /* for hover, focus */
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(7) > p:nth-of-type(1) > a > img:is(:hover, :focus) {
+    filter: brightness(80%);
+}
+
+/* DISCOVER NEW TREATS
+==================================================== */
+.top main > section:nth-of-type(2) > article:nth-of-type(8) {
+    text-align: center;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(8) > form {
+    display: grid;
+    grid-template-rows: 3em;
+    grid-template-columns: min(70%, 400px) auto;
+    gap: 0.5em;
+    justify-content: center;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(8) > form > input:nth-of-type(1) {
+    padding-inline-start: 1em;
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(8) > form > input:nth-of-type(2) {
+    padding-inline: 0.5em;
+    font-family: "Noto Serif", serif;
+    font-size: calc(var(--logic-px) * 14);
+    color: var(--color-link);
+    background-color: transparent;
+    border: 2px solid var(--color-button-border);
+}
+
+.top main > section:nth-of-type(2) > article:nth-of-type(8) > form > input:nth-of-type(2):is(:hover, :focus) {
+    color: #333;
+    text-decoration: none;
+    background-color: var(--color-button-hover);
+    border: 1px solid var(--color-link);
+}
+
+/* ====================================================
+** MEDIA QUERY - Tablet
+==================================================== */
+@media screen and (min-width: 600px) {
+    .top main > section:nth-of-type(2) > article:not(:nth-of-type(8)) { /* article block end */
+        margin-block-end: 6em;
+    }
+
+    /* HOW IT WORKS
+    ==================================================== */
+    .top main > section:nth-of-type(2) > article:nth-of-type(1) {
+        display: grid;
+        grid-template-areas:
+            "hiw hiw hiw"
+            "section1 section2 section3";
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(1) > h2 {
+        grid-area: hiw;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(1) > section {
+        grid-template-areas:
+            "a"
+            "b"
+            "c";
+        grid-template-columns: 100%;
+        row-gap: 1em;
+        column-gap: 0;
+        padding-block: 0;
+        padding-inline: 1em;
+        border-bottom: none;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(1) > section img {
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        inline-size: 100%;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(1) > section h3 {
+        grid-area: b;
+        margin-block-end: 0;
+        text-align: center;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(1) > section p {
+        grid-area: c;
+    }
+
+    /* INSPIRATION
+    ==================================================== */
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section:nth-of-type {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1em;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section:nth-of-type(1) {
+        grid-template-areas: "ba bb";
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section:nth-of-type(2) {
+        grid-template-areas: "bb ba";
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section > img {
+        grid-area: ba;
+        filter: blur(0);
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section > div {
+        display: flex;
+        flex-direction: column;
+        grid-area: bb;
+        gap: 1em;
+        padding: unset;
+        margin-block: auto;
+        background-color: unset;
+        border: unset;
+        inset-block-start: unset;
+        inset-inline-start: unset;
+        inline-size: unset;
+        block-size: unset;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section:nth-of-type(1) > div {
+        padding-inline-start: 1em;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section:nth-of-type(2) > div {
+        padding-inline-end: 1em;
+        text-align: end;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section:nth-of-type(1) > div > h3 {
+        inline-size: 100%;
+        text-align: start;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section:nth-of-type(2) > div > h3 {
+        inline-size: 100%;
+        text-align: end;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section > p {
+        margin-block: 0;
+    }
+
+    /* JOIN OUR INSTAGRAM
+    ==================================================== */
+    .top main > section:nth-of-type(2) > article:nth-of-type(7) > p:nth-of-type(1) {
+        grid-template-areas: "ca cb cc cd";
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* ====================================================
+** MEDIA QUERY - PC
+==================================================== */
+@media screen and (min-width: 1025px) {
+    :root {
+        --color-gold: #ba9762;
+    }
+
+    .top {
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            "main main main"
+            "footer footer footer";
+        grid-template-columns: 1fr clamp(1025px, 80%, 1720px) 1fr;
+    }
+
+    .top main {
+        display: grid;
+        grid-template-areas:
+            "hero hero hero"
+            ". article .";
+        grid-template-columns: 1fr clamp(1025px, 80%, 1720px) 1fr;
+    }
+
+    /* HERO
+    ==================================================== */
+    .top > main > section:nth-of-type(1) {
+        grid-area: hero;
+        block-size: calc(100vh - 6em);
+    }
+
+    /* --- scroll --- */
+    .top > main > section:nth-of-type(1) > p:nth-of-type(3) {
+        position: absolute;
+        inset-block-end: 10px;
+        inset-inline-start: 50%;
+        display: block;
+    }
+
+    /* --- scroll text --- */
+    .top > main > section:nth-of-type(1) > p:nth-of-type(3) > span {
+        position: absolute;
+        inset-inline-end: 10px;
+        inset-block-start: 10px;
+        font-size: 0.7rem;
+        color: var(--color-gold);
+        letter-spacing: 0.05em;
+        writing-mode: vertical-rl;
+    }
+
+    /* --- scroll circle --- */
+    .top > main > section:nth-of-type(1) > p:nth-of-type(3)::before {
+        position: absolute;
+        inset-inline-end: 0;
+        inset-inline-start: -4px;
+        inline-size: 10px;
+        block-size: 10px;
+        content: "";
+        background: var(--color-gold);
+        animation:
+            circlemove 1.6s ease-in-out infinite,
+            cirlemovehide 1.6s ease-out infinite;
+    }
+
+    @keyframes circlemove {
+        0% { bottom: 45px; }
+        100% { bottom: -5px; }
+    }
+
+    @keyframes cirlemovehide {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        80% { opacity: 0.9; }
+        100% { opacity: 0; }
+    }
+
+    /* --- scroll line --- */
+    .top > main > section:nth-of-type(1) > p:nth-of-type(3)::after {
+        position: absolute;
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        inline-size: 2px;
+        block-size: 50px;
+        content: "";
+        background: var(--color-gold);
+    }
+
+    .top > main > section:nth-of-type(2) {
+        grid-area: article;
+    }
+
+    .top main > section:nth-of-type(2) > article:not(:nth-of-type(8)) {
+        margin-block-end: 8em;
+    }
+
+    /* WHAT'S INSIDE THE BOX
+    ==================================================== */
+    .top main > section:nth-of-type(2) > article:nth-of-type(2) {
+        display: grid;
+        grid-template-areas:
+            "aa aa"
+            "ab ac"
+            "ad ad";
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1em;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(2) > h2 {
+        grid-area: aa;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(2) > section:nth-of-type(1) {
+        grid-area: ab;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(2) > section:nth-of-type(2) {
+        grid-area: ac;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(2) > p {
+        grid-area: ad;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(2) > section img {
+        inline-size: 100%;
+    }
+
+    /* WHAT COSTOMER SAY
+    ==================================================== */
+    .top main > section:nth-of-type(2) > article:nth-of-type(4) {
+        display: grid;
+        grid-template-areas:
+            "title title title title"
+            "ca cb cc cd";
+        gap: 1em;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(4) > h2 {
+        grid-area: title;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(4) > section {
+        padding: 1em;
+        margin-block: unset;
+    }
+
+    /* INSPIRATION
+    ==================================================== */
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section:nth-of-type(1) {
+        display: grid;
+        grid-template-areas: "ba bb bb";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section:nth-of-type(2) {
+        grid-template-areas: "bb bb ba";
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section > img {
+        grid-area: ba;
+        filter: blur(0);
+    }
+
+    .top main > section:nth-of-type(2) > article:nth-of-type(6) > section > div {
+        grid-area: bb;
+        padding: unset;
+        background-color: unset;
+        border: unset;
+        inset-block-start: unset;
+        inset-inline-start: unset;
+        inline-size: unset;
+        block-size: unset;
+    }
+}
