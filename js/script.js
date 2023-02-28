@@ -61,3 +61,24 @@ $(".autoplay").slick({
         },
     ],
 });
+
+//fade up
+const fadeSections = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+
+const options = {
+  threshold: 0.5
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-up-active');
+      entry.target.classList.add('fade-left-active');
+      entry.target.classList.add('fade-right-active');
+    }
+  });
+}, options);
+
+fadeSections.forEach(section => {
+  observer.observe(section);
+});
